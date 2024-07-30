@@ -1,0 +1,866 @@
+@charset "UTF-8";
+
+html {
+    font-size: 100%;
+    background-color: #F9EFDB;
+}
+
+body {
+    font-family:"Zen Kaku Gothic New", "游ゴシック体", "YuGothic", sans-serif;
+    
+
+}
+
+section{
+text-align: center;
+margin: 50px 0;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.section-title{
+    font-size: 48px;
+    color: #9DBC98;
+    /* border: 1px blue solid; */
+    font-family:  "Zen Dots";
+    margin: 50px 0;
+}
+
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    /* border: 1px green solid; */
+}
+
+p{
+    color: #638889;
+    font-size: clamp(14px, 1.6vw, 20px);
+}
+
+
+
+/* header */
+
+
+
+/* header{
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    background-size: cover;
+    background-image: url(../img/wave-haikei.svg);
+    position: relative;
+
+} */
+header{
+    height: 100vh;
+    
+    margin-bottom: 150px;
+}
+
+
+#header{
+    background-image: url(../img/background.svg);
+    background-size: cover;
+    height: 300px;
+    position: relative;
+}
+
+
+.header-logo img{
+    width: 80px;
+    /* margin-left: 50px; */
+    vertical-align: bottom;
+    margin-left: 50px;
+    margin-top: 10px;
+    
+
+}
+
+.humberger{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 30;
+}
+
+
+.toggle_btn{
+    position: relative;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    
+}
+
+
+.toggle_btn span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.toggle_btn .invert{
+    background-color: #9DBC98;
+}
+
+.toggle_btn, .btn-trigger span {
+    display: inline-block;
+    transition: all .5s;
+    box-sizing: border-box;
+}
+.toggle_btn span:nth-of-type(1) {
+    top: 0;
+}
+.toggle_btn span:nth-of-type(2) {
+    top: 13px;
+}
+.toggle_btn span:nth-of-type(3) {
+    bottom: 0;
+}
+
+
+.active .toggle_btn{
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+.active .toggle_btn span:nth-of-type(1) {
+    -webkit-transform: translateY(20px) rotate(-45deg);
+    transform: translateY(13px) rotate(-45deg);
+}
+.active .toggle_btn span:nth-of-type(2) {
+    -webkit-transform: translateY(0) rotate(45deg);
+    transform: translateY(0) rotate(45deg);
+}
+.active .toggle_btn span:nth-of-type(3) {
+    opacity: 0;
+}
+
+.nav-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    bottom: 0;
+    width: 300px;
+    color: #fff;
+    padding: 60px 25px;
+    background-color: #9DBC98;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: all .5s;
+    z-index: 20;
+    opacity: 0;
+}
+.nav-menu a {
+    color: #fff;
+}
+.active .nav-menu {
+    left: 0;
+    opacity: 1;
+}
+.nav-menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+.nav-menu ul li {
+    position: relative;
+    margin: 0;
+    padding: 20px 0;
+    border-bottom: solid 1px #fff;
+}
+
+/* mask */
+#mask {
+    display: none;
+    transition: all .5s;
+}
+.active #mask {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: .5;
+    z-index: 10;
+    cursor: pointer;
+}
+
+
+
+.btn-reservation{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #EBD9B4;
+    width: 13%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    color: #638889;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+}
+
+.btn-reservation p{
+    font-size: clamp(14px, 1.6vw, 24px);
+    text-align: center;
+}
+
+.mainvisual{
+    margin-bottom: 550px;
+    /* border: 2px red solid; */
+}
+
+
+
+.mainvisual img{
+    width: 100vw;
+    object-fit: cover;
+    object-position: 70% 0%;
+    /* border: red 1px solid; */
+    vertical-align: bottom;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: -10;
+
+
+}
+
+
+/* about */
+
+.about-container{
+    width: 94%;
+    border-radius: 200px;
+    overflow: hidden;
+    margin: 30px auto;
+    background-color: rgb(255, 255, 255, 0.5);
+}
+
+.about-container p{
+    padding: 50px 0;
+}
+
+
+/* ---fadeUp */
+
+.fadeUp{
+    animation-name:fadeUpAnime;
+    animation-duration: 1s;
+    animation-fill-mode:forwards;
+    opacity:0;
+    }
+    
+    @keyframes fadeUpAnime{
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+/* fadeout */
+.fadeOut{
+    animation-name:fadeOutAnime;
+    animation-duration: 1s;
+    animation-fill-mode:forwards;
+    }
+    
+    @keyframes fadeOutAnime{
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+    }
+
+
+/*==================================================
+スライダーのためのcss
+===================================*/
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+    width:94%;
+    margin:0 auto;
+
+}
+
+.slider img {
+    width:60vw;/*スライダー内の画像を60vwにしてレスポンシブ化*/
+    height:auto;
+    border-radius: 200px;
+}
+
+.slider .slick-slide {
+	transform: scale(0.8);/*左右の画像のサイズを80%に*/
+	transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
+	opacity: 0.5;/*透過50%*/
+}
+
+.slider .slick-slide.slick-center{
+	transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+	opacity: 1;/*透過なし*/
+}
+
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev, 
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;/*矢印の色*/
+    border-right: 2px solid #666;/*矢印の色*/
+    height: 15px;
+    width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left: -1.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right: -1.5%;
+    transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+    text-align:center;
+	margin:20px 0 0 0;
+}
+
+.slick-dots li {
+    display:inline-block;
+	margin:0 5px;
+}
+
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    width:8px;/*ドットボタンのサイズ*/
+    height:8px;/*ドットボタンのサイズ*/
+    display:block;
+    border-radius:50%;
+    background:#ccc;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+    background:#333;/*ドットボタンの現在地表示の色*/
+}
+
+
+
+
+
+/* stay */
+
+.stay-item{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.stay-item:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+.stay-item img{
+    width: 45%;
+    aspect-ratio: 16/9;
+    border-radius: 200px;
+}
+
+
+.stay-container{
+    width: 45%;
+    aspect-ratio: 16/9;
+    border-radius: 200px;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255, 0.5);
+    position: relative;
+}
+
+.stay-container h3{
+    width: 80%;
+    position: absolute;
+    font-size: clamp(14px, 1.4vw, 18px);
+    top: 20%;
+    left: 50%;
+    transform: translate( -50% , -50%); 
+
+}
+
+.stay-container p{
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50% , -50%); 
+    text-align: left;
+    font-size: clamp(10px, 1.4vw, 18px);
+}
+
+
+/* ---fadein */
+.fadeRight{
+    animation-name:fadeRightAnime;
+    animation-duration: 1s;
+    animation-fill-mode:forwards;
+    opacity:0;
+    }
+    
+    @keyframes fadeRightAnime{
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    }
+
+
+.fadeLeft{
+    animation-name:fadeLeftAnime;
+    animation-duration: 1s;
+    animation-fill-mode:forwards;
+    opacity:0;
+    }
+    
+    @keyframes fadeLeftAnime{
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    }
+
+
+
+/* room */
+.room-items{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.room-item{
+    width: calc(100% / 3);
+    margin-right: 20px;
+}
+#room img{
+    width: 100%;
+    border-radius: 200px;
+    object-fit: cover;
+}
+
+.room-container{
+    width: 94%;
+    border-radius: 200px;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255, 0.5);
+    margin: 30px auto;
+    padding: 50px 0;
+}
+
+.room-item-container{
+    border-radius: 200px;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255, 0.5);
+    margin: 30px 0;
+    padding: 50px 0;
+}
+
+.room-p{
+    text-align: right;
+}
+
+/* facilites */
+#facilites{
+    margin-top: 100px;
+}
+
+.facilites-items{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    /* border: 1px orangered solid; */
+    
+}
+
+#facilites img{
+    width: 90%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.facilites-container p{
+    margin: 20px 0;
+    font-size: clamp(16px, 1.6vw, 24px);
+}
+
+/* rental */
+#rental{
+    max-width: 900px;
+    /* border: 1px red solid; */
+}
+
+.rental-container{
+    max-width: 100px;
+    border-radius: 200px;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255, 0.5);
+    margin-bottom: 30px;
+}
+
+.rental-container p{
+    padding: 20px 0;
+}
+
+.rental-inner{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    justify-content: space-around;
+    margin: 0 auto;
+
+}
+
+.rental-inner img{
+    width: 50%;
+}
+
+.rental-inner p{
+    margin-top: 20px;
+}
+
+.rental-p {
+    text-align: right;
+    margin: 50px 0;
+    
+}
+
+
+/* QandA */
+
+/*アコーディオン全体*/
+.accordion-area{
+    list-style: none;
+    width: 96%;
+    max-width: 900px;
+    margin:0 auto;
+}
+
+.accordion{
+    margin: 30px 0;
+}
+
+
+
+/*アコーディオンタイトル*/
+.title {
+    position: relative;/*+マークの位置基準とするためrelative指定*/
+    cursor: pointer;
+    font-size:clamp(14px, 1.6vw, 20px);
+    font-weight: normal;
+    padding: 0 0 0 50px;
+    transition: all .5s ease;
+    color: #638889;
+    text-align: left;
+}
+
+/*アイコンの＋と×*/
+.title::before,
+.title::after{
+    position: absolute;
+    content:'';
+    width: 15px;
+    height: 2px;
+    background-color: #638889;
+    
+}
+.title::before{
+    top:48%;
+    left: 15px;
+    transform: rotate(0deg);
+    
+}
+.title::after{    
+    top:48%;
+    left: 15px;
+    transform: rotate(90deg);
+
+}
+/*　closeというクラスがついたら形状変化　*/
+.title.close::before{
+	transform: rotate(45deg);
+}
+
+.title.close::after{
+	transform: rotate(-45deg);
+}
+
+/*アコーディオンで現れるエリア*/
+.answer {
+    display: none;/*はじめは非表示*/
+    background-color: rgb(255, 255, 255, 0.5);
+    border-radius: 200px;
+	margin:10px 10px 0 10px;
+    padding: 3%;
+    text-align: left;
+}
+
+/* access */
+.access-container{
+    background-color: rgb(255, 255, 255, 0.5);
+    border-radius: 200px;
+    text-align: left;
+    width: 94%;
+    height: 400px;
+    position: relative;
+    margin-top: 50px;
+    
+}
+
+.access-container p{
+    font-size:clamp(14px, 1.6vw, 18px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50% , -50%); 
+
+}
+
+iframe{
+    max-width: 1000px;
+    width: 94%;
+    height: 400px;
+    border-radius: 50px;
+}
+
+/* contact */
+#contact{
+    width: 80%;
+}
+
+form,dt{
+    font-size: clamp(18px, 1.6vw, 20px);
+    color: #638889;
+    margin: 15px 0;
+    text-align: left;
+}
+
+input,textarea{
+    background-color: #fff;
+    width: 100%;
+    padding: 20px;
+    font-size: clamp(14px, 1.6vw, 20px);
+}
+
+textarea{
+    height: 300px;
+}
+
+
+
+.button input{
+    background-color: #F9EFDB;
+    color: #638889;
+}
+
+
+.button {
+    border: 2px solid #638889;
+    border-radius: 0;
+    background: #fff;
+    width: 30%;
+    margin: 30px 0;
+
+}
+
+.button :hover {
+    color: #F9EFDB;
+    background-color: #638889;
+    transition: 0.5s;
+
+}
+
+
+/* footer */
+footer{
+    background-color: #9DBC98;
+}
+
+#footer{
+    display: flex;
+}
+
+.footer-menu1, .footer-menu2{
+    display: flex;
+    flex-direction: row;
+    padding: 80px 0;
+}
+
+.footer-menu1 li,
+.footer-menu2 li{
+    margin-left: 18px;
+}
+
+
+.footer-menu1 li::before,
+.footer-menu2 li::before{
+    content: "-";
+    margin-right: 10px;
+    color: #EBD9B4;
+}
+
+
+.footer-menu1 a, .footer-menu2 a{
+    color: #F9EFDB;
+    font-size: clamp(14px, 1.6vw, 20px);;
+}
+
+@media(max-width:900px){
+    .btn-reservation{
+        width: 20%;
+    }
+
+    .mainvisual img{
+        width: 100%;
+
+    }
+
+    .mainvisual{
+        margin-bottom: 300px;
+    }
+
+
+    #contact{
+        width: 94%;
+    }
+    
+    
+    .footer-menu1,.footer-menu2{
+        flex-direction: column;
+        padding: 30px 0;
+    }
+    
+    .footer-menu2{
+        margin-left: 50px;
+    }
+    
+    .footer-menu1 li, .footer-menu2 li{
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+
+
+@media(max-width:450px){
+    .wrapper{
+        padding: 0 13px;
+    }
+    .header-logo img{
+        margin-left: 13px;
+    }
+
+    .nav-menu{
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .btn-reservation{
+        width: 28%;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    /* #about{
+        margin-top: 400px;
+    } */
+
+    .slider img{
+        width: 90vw;
+    }
+
+    .stay-item{
+        flex-direction: column;
+    }
+
+    .stay-item:nth-child(even){
+        flex-direction: column;
+    }
+
+    .stay-item img{
+        width: 100%;
+    }
+
+    .stay-container{
+        width: 100%;
+        height: 150px;
+        margin-top: 20px;
+    }
+
+
+    .access-container{
+        border-radius: 50px;
+    }
+
+    .access-container p{
+        width: 90%;
+    }
+
+    .section-title{
+        font-size: 32px;
+    }
+
+    .button{
+        width: 100%;
+    }
+
+}
+
