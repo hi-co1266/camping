@@ -399,6 +399,7 @@ header{
     width: 45%;
     aspect-ratio: 16/9;
     border-radius: 200px;
+    opacity: 0;
 }
 
 
@@ -409,6 +410,7 @@ header{
     overflow: hidden;
     background-color: rgb(255, 255, 255, 0.5);
     position: relative;
+    opacity: 0;
 }
 
 .stay-container h3{
